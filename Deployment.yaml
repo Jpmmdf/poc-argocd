@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: rest-json-quickstart-quarkus
+  name: rest-json-quickstart-quarkus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rest-json-quickstart-quarkus
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: rest-json-quickstart-quarkus
+    spec:
+      containers:
+      - image: joaomilhome/rest-json-quickstart-jvm
+        name: rest-json-quickstart-jvm
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}
